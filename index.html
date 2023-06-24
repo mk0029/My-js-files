@@ -29,14 +29,14 @@
         <input style=" width: 12%; height: 30px;" type="button" value="Clear" onclick="eraseData('')">
     </div>
     <div class="" style=" display: flex; gap: 10px; margin: 10px 0;"> <input style=" width: 15%; height: 30px;"
-            type="button" value="/" onclick="addSign('/')">
-        <input style=" width: 15%; height: 30px;" type="button" value="*" onclick="addSign('*')">
-        <input style=" width: 15%; height: 30px;" type="button" value="**" onclick="addSign('**')">
+            type="button" value="/" onclick="addNumber('/')">
+        <input style=" width: 15%; height: 30px;" type="button" value="*" onclick="addNumber('*')">
+        <input style=" width: 15%; height: 30px;" type="button" value="**" onclick="addNumber('**')">
     </div>
     <div class="" style=" display: flex; gap: 10px; margin: 10px 0;"> <input style=" width: 15%; height: 30px;"
-            type="button" value="+" onclick="addSign('+')">
-        <input style=" width: 15%; height: 30px;" type="button" value="-" onclick="addSign('-')">
-        <input style=" width: 15%; height: 30px;" type="button" value="%" onclick="addSign('%')">
+            type="button" value="+" onclick="addNumber('+')">
+        <input style=" width: 15%; height: 30px;" type="button" value="-" onclick="addNumber('-')">
+        <input style=" width: 15%; height: 30px;" type="button" value="%" onclick="addNumber('%')">
     </div>
     <script> let Show = document.getElementById("showResult")
         let out = ""
@@ -44,7 +44,8 @@
             out += num
             Show.value = out
         }
-        function addSign(sign) {
+        function addNumber(sign) {
+            888
             out += sign
             Show.value = out
         }
@@ -60,4 +61,94 @@
     </script>
 </body>
 
-</html>
+</html><!--
+    <!DOCTYPE html>
+    <html>
+    
+    <head>
+        <title>Todo List</title>
+        <style>
+            ul {
+                list-style-type: none;
+                padding: 0;
+    
+            }
+    
+            .Parentbox {
+                display: flex;
+                justify-content: space-between;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+    
+            .box_element {
+                color: white;
+                padding: 5px;
+                text-align: center;
+                margin: 12px 0;
+                width: 30.33%;
+            }
+    
+            li:nth-child(odd) {
+                background-color: rgb(253, 72, 72);
+            }
+    
+            li:nth-child(odd) .box_element:nth-child(odd) {
+                background-color: rgb(66, 58, 103);
+            }
+    
+            li:nth-child(odd) .box_element:nth-child(even) {
+                background-color: rgb(58, 103, 94);
+            }
+    
+            li:nth-child(even) {
+                background-color: rgb(216, 228, 147);
+            }
+    
+    
+    
+            li:nth-child(even) .box_element:nth-child(odd) {
+                background-color: rgb(151, 57, 129);
+            }
+    
+            li:nth-child(even) .box_element:nth-child(even) {
+                background-color: rgb(220, 111, 53);
+            }
+        </style>
+    </head>
+    
+    <body>
+        <h1>Todo List</h1>
+    
+        <form id="">
+            <input type="text" id="task" placeholder="Task">
+            <input type="text" id="priority" placeholder="Priority">
+            <input type="text" id="dueDate" placeholder="Due Date">
+            <button type="button" onclick="addTodo()">Add</button>
+        </form>
+    
+        <ul id="todoList"></ul>
+    
+        <script>
+            function addTodo() {
+                const taskInput = document.getElementById("task");
+                const priorityInput = document.getElementById("priority");
+                const dueDateInput = document.getElementById("dueDate");
+    
+                const task = taskInput.value;
+                const priority = priorityInput.value;
+                const dueDate = dueDateInput.value;
+    
+                if (task.trim() !== "") {
+                    const todoItem = document.createElement("li");
+                    todoItem.innerHTML = `<div class="Parentbox"><div class="box_element"> ${task}</div><div class="box_element">  ${priority} </div><div class="box_element"> ${dueDate}</div></div>`;
+                    document.getElementById("todoList").appendChild(todoItem);
+    
+    
+                    taskInput.value = "";
+                    priorityInput.value = "";
+                    dueDateInput.value = "";
+                }
+            }
+        </script>
+    </body></html>-->
