@@ -145,6 +145,18 @@
             font-size: 18px;
             margin: 12px 0px;
             border-radius: 8px;
+            animation: divin .3s linear 0s 1 forwards;
+        }
+
+        @keyframes divin {
+            0% {
+                scale: .4;
+            }
+
+            100% {
+                scale: 1;
+            }
+
         }
 
         .btn {
@@ -162,10 +174,12 @@
             border-radius: 20px;
             display: inline-block;
             text-align: end;
-            margin-top: -117px;
+            margin-top: -67px;
             margin-right: 10px;
             font-size: 16px;
             font-weight: 500;
+            position: relative;
+            z-index: 2;
         }
 
         .btn_remove:hover {
@@ -276,9 +290,17 @@
                 savedata.innerText = "Save";
                 // create an new  child in ul
                 list.appendChild(newDiv);
-                list.appendChild(btnedit);
-                list.appendChild(savedata);
-                list.appendChild(btnremove);
+                setTimeout(() => {
+                    list.appendChild(btnedit);
+                }, 400);
+                setTimeout(() => {
+                    list.appendChild(savedata);
+                }, 600);
+                setTimeout(() => {
+                    list.appendChild(btnremove);
+                }, 800);
+
+
                 input.value = "";
                 btnedit.addEventListener("click", function () {
                     newDiv.contentEditable = "true";
